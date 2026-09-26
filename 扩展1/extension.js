@@ -1306,7 +1306,7 @@ export default function(){
                             .forResult();
                         if (!result.bool) return;
                         player.logSkill("re_dczhifou");
-                        player.loseToDiscardpile(result.links);
+                        await player.loseToDiscardpile(result.links);
 
                         var result2 = await player
                             .chooseTarget("知否：选择一名角色", true)
@@ -1352,7 +1352,9 @@ export default function(){
                                     .choosePlayerCard(target, "he", true, [1, 1], "将" + get.translation(target) + "的一张牌称为「翼」置于你的武将牌上")
                                     .forResult();
                                 if (r3.bool && r3.cards && r3.cards.length) {
-                                    player.addToExpansion(r3.cards, target, "give").gaintag.add("re_dclingxi");
+                                    var expansionEvent = player.addToExpansion(r3.cards, target, "give");
+                                    expansionEvent.gaintag.add("re_dclingxi");
+                                    await expansionEvent;
                                 }
                             } else if (opt == "弃" && (target == player ? target.countDiscardableCards(target, "he") : target.countCards("he"))) {
                                 player.line(target, "fire");
@@ -1362,7 +1364,7 @@ export default function(){
                                         .choosePlayerCard(target, "he", true, [1, max2], "弃置" + get.translation(target) + "的至多两张牌")
                                         .forResult();
                                     if (r4.bool && r4.cards && r4.cards.length) {
-                                        target.discard(r4.cards);
+                                        await target.discard(r4.cards);
                                     }
                                 }
                             } else if (opt == "体力") {
@@ -1371,6 +1373,7 @@ export default function(){
                             }
                         }
                     } finally {
+                        // 所有失牌及其触发结算完成后，才能解除防递归保护。
                         player._re_dczhifou_ing = false;
                     }
                 },
@@ -2051,6 +2054,6 @@ export default function(){
     author: "nihility",
     diskURL: "",
     forumURL: "",
-    version: "1.6.1",
+    version: "1.6.2",
 },files:{"character":["mozarong.gif","jl_guansuo.jpg","reshen_dengai.jpg","jl_xiaoqiao.jpg","jl_caoying.jpg","jl_zhangqiying.jpg","jl_zhaoxiang.jpg","re_caoxian.jpg","jl_shen_zhaoyun.jpg","jl_nianshou.jpg"],"card":[],"skill":[],"audio":[]}} 
 };
