@@ -4,7 +4,7 @@ const path = require("node:path");
 const { test } = require("node:test");
 const vm = require("node:vm");
 
-const source = readFileSync(path.join(__dirname, "../扩展1/extension.js"), "utf8");
+const source = readFileSync(path.join(__dirname, "../破界异志/extension.js"), "utf8");
 const start = source.indexOf('            "re_dczhifou": {');
 const end = source.indexOf('            "reshen_tuoyu": {', start);
 assert.ok(start >= 0 && end > start, "应从实际扩展源码中提取知否");

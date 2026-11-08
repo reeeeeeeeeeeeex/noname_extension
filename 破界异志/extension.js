@@ -1,7 +1,7 @@
 import { lib, game, ui, get, ai, _status } from "noname";
 export const type = "extension";
 export default function(){
-	return {name:"扩展1",editable:true,connect:false,arenaReady:function(){
+	return {name:"破界异志",editable:true,connect:false,arenaReady:function(){
     
 },content:function(config,pack){
     
@@ -17,8 +17,8 @@ export default function(){
                 maxHp: 4,
                 hujia: 0,
                 skills: ["ext1_mocansi","ext1_mofozong"],
-                img: "extension/扩展1/mozarong.gif",
-                dieAudios: ["ext:扩展1/audio/die/mozarong.mp3"],
+                img: "extension/破界异志/mozarong.gif",
+                dieAudios: ["ext:破界异志/audio/die/mozarong.mp3"],
             },
             "re_caoxian": {
                 sex: "female",
@@ -26,9 +26,9 @@ export default function(){
                 hp: 4,
                 maxHp: 4,
                 skills: ["re_dclingxi","re_dczhifou"],
-                img: "extension/扩展1/re_caoxian.jpg",
+                img: "extension/破界异志/re_caoxian.jpg",
                 hujia: 0,
-                dieAudios: ["ext:扩展1/audio/die/re_caoxian.mp3"],
+                dieAudios: ["ext:破界异志/audio/die/re_caoxian.mp3"],
             },
             "reshen_dengai": {
                 sex: "male",
@@ -37,8 +37,8 @@ export default function(){
                 maxHp: 4,
                 hujia: 0,
                 skills: ["reshen_tuoyu","reshen_xianjin","reshen_qijing"],
-                img: "extension/扩展1/reshen_dengai.jpg",
-                dieAudios: ["ext:扩展1/audio/die/reshen_dengai.mp3"],
+                img: "extension/破界异志/reshen_dengai.jpg",
+                dieAudios: ["ext:破界异志/audio/die/reshen_dengai.mp3"],
             },
         },
         translate: {
@@ -48,7 +48,7 @@ export default function(){
             "re_caoxian_prefix": "界",
             "reshen_dengai": "界神邓艾",
             "reshen_dengai_prefix": "界|神",
-            "扩展1": "扩展1",
+            "破界异志": "破界异志",
         },
     },
     card: {
@@ -61,7 +61,7 @@ export default function(){
     skill: {
         skill: {
             "ext1_mocansi": {
-                audio: "ext:扩展1:2",
+                audio: "ext:破界异志:2",
                 trigger: {
                     player: "phaseZhunbeiBegin",
                 },
@@ -165,7 +165,7 @@ export default function(){
                 "_priority": 0,
             },
             "ext1_mofozong": {
-                audio: "ext:扩展1:2",
+                audio: "ext:破界异志:2",
                 trigger: {
                     global: ["gainAfter","loseAsyncAfter"],
                 },
@@ -416,7 +416,7 @@ export default function(){
                 "_priority": 0,
             },
             "reshen_tuoyu": {
-                audio: "ext:扩展1:2",
+                audio: "ext:破界异志:2",
                 trigger: {
                     global: ["phaseBegin","phaseEnd"],
                 },
@@ -663,7 +663,7 @@ export default function(){
                 "_priority": 0,
             },
             "reshen_xianjin": {
-                audio: "ext:扩展1:2",
+                audio: "ext:破界异志:2",
                 trigger: {
                     global: "gameStart",
                     player: "damageEnd",
@@ -770,7 +770,7 @@ export default function(){
             },
             "reshen_qijing": {
                 derivation: "reshen_cuixin",
-                audio: "ext:扩展1:2",
+                audio: "ext:破界异志:2",
                 trigger: {
                     global: "phaseEnd",
                 },
@@ -838,7 +838,7 @@ export default function(){
                 "_priority": 0,
             },
             "reshen_cuixin": {
-                audio: "ext:扩展1:2",
+                audio: "ext:破界异志:2",
                 trigger: {
                     player: "useCardAfter",
                 },
